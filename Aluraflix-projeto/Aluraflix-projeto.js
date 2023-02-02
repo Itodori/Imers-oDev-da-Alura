@@ -22,3 +22,4 @@ function adicionarCartaz(){
 for (var i = 0; i < cartazes.length; i++) {
   document.writeln("<div class='texto-imagem'><img src=" + cartazes[1] + "><p>" + nomesFilmes[i] + "</p></div>" )
 }
+export function adicionarCartaz();

@@ -1,3 +1,35 @@
+<!DOCTYPE html>
+<head>
+<script>
+  var cartazes = [];
+  var nomesFilmes = [];
+  var nome;
+  var cartaz;
+  link.addEventListener('change', function (){
+    console.log(link.value);
+    cartaz = (link.value);
+  });
+  nomeFilme.addEventListener('change', function(){
+    console.log(nomeFilme.value);
+    nome = (nomeFilme.value);
+  })
+  function adicionarCartaz(){
+    var ext = cartaz.substring(cartaz.lastIndexOf('.') + 1);
+    if (ext =="jpeg" || ext=="png" || ext=="jpg") {
+      cartazes.push(cartaz);
+      nomesFilmes.push(nome);
+      console.log(cartazes);
+      console.log(nomesFilmes);
+    } else {
+      alert("Link inválido, por favor adicione apenas imagens jpeg, jpg ou png!")
+    }
+  }
+  for (var i = 0; i < cartazes.length; i++) {
+    document.writeln("<div class='texto-imagem'><img src=" + cartazes[1] + "><p>" + nomesFilmes[i] + "</p></div>" )
+  }
+</script>
+<link rel="stylesheet" href="Aluraflix-projeto.css"></link>
+</head>
 <div class="container">
     <h1 class="page-title">
       Aluraflix
@@ -10,7 +42,7 @@
   <form>
     <div>
     <label class="label">Link da imagem</label>
-    <input type="input" class="input" id="source" value=''></input>
+    <input type="input" class="input" id="link" value=''></input>
     </div>
   <div>
   <label class="label">Nome do Filme</label>
